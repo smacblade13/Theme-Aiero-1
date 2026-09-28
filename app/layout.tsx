@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Manrope } from "next/font/google";
 import { UiProvider } from "@/context/UiContext";
+import { site } from "@/data/site";
 import "../public/assets/scss/style.scss";
 import Sidemenu from "@/components/headers/Sidemenu";
 import SearchPopup from "@/components/common/SearchPopup";
@@ -28,8 +29,34 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Aiero AI Agency & Technology React Nextjs Template",
-  description: "Aiero AI Agency & Technology React Nextjs Template",
+  metadataBase: new URL(site.seo.siteUrl),
+  title: {
+    default: site.seo.defaultTitle,
+    template: site.seo.titleTemplate,
+  },
+  description: site.seo.defaultDescription,
+  applicationName: site.brand.name,
+  icons: {
+    icon: [{ url: "/favicon.ico" }],
+  },
+  manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    siteName: site.brand.name,
+    title: site.seo.defaultTitle,
+    description: site.seo.defaultDescription,
+    url: site.seo.siteUrl,
+    images: [{ url: site.seo.ogImage, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.seo.defaultTitle,
+    description: site.seo.defaultDescription,
+    images: [site.seo.ogImage],
+    ...(site.seo.twitterHandle
+      ? { creator: site.seo.twitterHandle, site: site.seo.twitterHandle }
+      : {}),
+  },
 };
 
 export default function RootLayout({

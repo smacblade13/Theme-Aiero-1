@@ -21,13 +21,7 @@ export default function Page() {
             You are here because you entered the address of a page that no
             longer exists or has been moved to a different address
           </p>
-          <Link
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title=""
-            className="ibt-btn ibt-btn-outline"
-          >
+          <Link href="/" className="ibt-btn ibt-btn-outline">
             <span>Home page</span>
             <i className="icon-arrow-top" />
           </Link>

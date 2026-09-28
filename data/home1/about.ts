@@ -1,0 +1,18 @@
+import type { AboutContent } from "@/types/home1";
+
+export const aboutContent: AboutContent = {
+  styleText: "Neural Networks",
+  eyebrow: "about",
+  title: "Pioneers in artificial intelligence solutions and innovation",
+  paragraphs: [
+    "At Aiero, we are a leading AI services provider dedicated to delivering innovative solutions that leverage artificial intelligence to transform businesses.",
+    "Our team of experts specializes in cutting-edge AI technologies, offering customized strategies and implementations to help you stay ahead in today's data-driven world. Unlock the full potential of AI with Aiero, your trusted partner in the future of intelligent technology.",
+  ],
+  cta: { label: "Explore More", href: "/services" },
+  image: {
+    src: "/assets/images/layers/person.png",
+    width: 805,
+    height: 1338,
+    alt: "Aiero team member",
+  },
+};

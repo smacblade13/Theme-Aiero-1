@@ -6,6 +6,7 @@ import Nav from "./Nav";
 import SideMenuToggler from "../common/SideMenuToggler";
 import SearchToggler from "../common/SearchToggler";
 import MobileMenuToggler from "../common/MobileMenuToggler";
+import { site } from "@/data/site";
 
 export default function Header1({
   className = "vs-header",
@@ -28,27 +29,22 @@ export default function Header1({
 }) {
   const [isSticky, setIsSticky] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setIsSticky(window.scrollY > 100);
-    });
-    return () => {
-      window.removeEventListener("scroll", () => {
-        setIsSticky(window.scrollY > 100);
-      });
-    };
+    const onScroll = () => setIsSticky(window.scrollY > 100);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <header className={` $ ${isSticky ? stickyClass : className}`}>
+    <header className={`${isSticky ? stickyClass : className}`}>
       <div className={isSticky ? "" : "container2 position-relative"}>
         <div className={isSticky ? stickyMenuClass || menuClass : menuClass}>
           <div className="row gx-20 align-items-center justify-content-between">
             <div className="col-auto col">
               <div className="header-logo">
                 <SideMenuToggler SideMenuTogglerClass={SideMenuTogglerClass} />
-                <Link href={`/index1`}>
+                <Link href="/" aria-label={site.brand.name}>
                   <Image
-                    alt="logo"
-                    src="/assets/images/logo.svg"
+                    alt={`${site.brand.name} logo`}
+                    src={site.brand.logoLight}
                     width={110}
                     height={20}
                   />
@@ -65,22 +61,24 @@ export default function Header1({
             <div className="col-auto d-none d-xl-block">
               <div className="btn-box">
                 {hasNumber && (
-                  <a href="#" title="" className="header-contact11">
-                    +1 800 684 32 59
+                  <a
+                    href={`tel:${site.contact.phone.replace(/\s+/g, "")}`}
+                    className="header-contact11"
+                  >
+                    {site.contact.phone}
                   </a>
                 )}
                 <SearchToggler />
                 {hasLogin && (
-                  <Link href={`/account`} title="" className="login-btn">
+                  <Link href="/account" className="login-btn">
                     <i className="fa fa-user"></i>login
                   </Link>
                 )}
                 <Link
-                  href={`/contact`}
-                  title=""
+                  href={site.nav.primaryCta.href}
                   className="ibt-btn ibt-btn-outline-3 ibt-btn-rounded"
                 >
-                  <span>Get in Touch</span>
+                  <span>{site.nav.primaryCta.label}</span>
                 </Link>
               </div>
             </div>
@@ -88,7 +86,6 @@ export default function Header1({
           <MobileMenuToggler />
         </div>
       </div>
-      {/*vs-main-menu-wrapper end*/}
     </header>
   );
 }

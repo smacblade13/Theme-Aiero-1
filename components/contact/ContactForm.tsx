@@ -1,9 +1,37 @@
 "use client";
 
+import { useState } from "react";
+
+import { site } from "@/data/site";
+
+type Status = "idle" | "opened";
+
 export default function ContactForm() {
+  const [status, setStatus] = useState<Status>("idle");
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Form handling logic can be added here (e.g. API call, validation)
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const subject = String(data.get("subject") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      "",
+      message,
+    ].join("\n");
+
+    const url =
+      `mailto:${site.contact.email}` +
+      `?subject=${encodeURIComponent(subject || "Website enquiry")}` +
+      `&body=${encodeURIComponent(body)}`;
+
+    window.location.href = url;
+    setStatus("opened");
   };
 
   return (
@@ -42,6 +70,12 @@ export default function ContactForm() {
         <span>Send message</span>
         <i className="icon-arrow-top" aria-hidden />
       </button>
+      {status === "opened" && (
+        <p role="status" className="contact-form-status">
+          Opening your email app… if nothing happens, email us directly at{" "}
+          <a href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.
+        </p>
+      )}
     </form>
   );
 }

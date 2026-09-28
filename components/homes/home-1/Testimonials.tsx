@@ -4,7 +4,11 @@ import TitleSplitWrapper from "@/components/common/TitleSplitWrapper";
 import Testimonials1 from "@/components/testimonials/Testimonials1";
 import Image from "next/image";
 
+import { testimonialsContent } from "@/data/home1/testimonials";
+
 export default function TestimonialsSec() {
+  const { eyebrow, title, happyClientsLabel, happyClientsCount, maskImage } =
+    testimonialsContent;
   return (
     <section className="testimonials-sec ibt-section-gapTop">
       <div className="container2">
@@ -15,27 +19,27 @@ export default function TestimonialsSec() {
           <div className="col-lg-5">
             <div className="testimonial-content">
               <Image
-                alt="AI Agency & Technology HTML Template"
-                src="/assets/images/layers/mask.png"
-                width={740}
-                height={792}
+                alt="Decorative mask"
+                src={maskImage.src}
+                width={maskImage.width}
+                height={maskImage.height}
               />
               <div className="title-area2">
                 <div className="sec-title white">
-                  <SubTitleWrapper>testimonials</SubTitleWrapper>
+                  <SubTitleWrapper>{eyebrow}</SubTitleWrapper>
                   <TitleSplitWrapper
                     tag="h2"
                     className="title animated-heading"
                   >
-                    Discover what our clients have to say about our AI solutions
+                    {title}
                   </TitleSplitWrapper>
                 </div>
                 <div className="testi-count">
                   <h4>
-                    <Counter max={250} />
+                    <Counter max={happyClientsCount} />
                     <span className="counter-text">+</span>
                   </h4>
-                  <span>Happy clients</span>
+                  <span>{happyClientsLabel}</span>
                 </div>
               </div>
             </div>

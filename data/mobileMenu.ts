@@ -29,7 +29,7 @@ export const mobileMenuItems: MobileMenuItem[] = [
     label: "pages",
     href: "#",
     children: [
-      { label: "About us", href: "#" },
+      { label: "About us", href: "/about" },
       {
         label: "Team",
         href: "#",
@@ -59,9 +59,9 @@ export const mobileMenuItems: MobileMenuItem[] = [
   },
   {
     label: "Services",
-    href: "#",
+    href: "/services",
     children: [
-      { label: "Services Page", href: "#" },
+      { label: "Services Page", href: "/services" },
       { label: "Service Single", href: "#" },
     ],
   },
@@ -87,6 +87,6 @@ export const mobileMenuItems: MobileMenuItem[] = [
   },
   {
     label: "Contacts",
-    href: "#",
+    href: "/contact",
   },
 ];

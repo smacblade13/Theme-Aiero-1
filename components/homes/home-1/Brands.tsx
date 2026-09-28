@@ -5,20 +5,16 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
-const brands = [
-  { src: "/assets/images/brand/brand1.png", width: 170, height: 53 },
-  { src: "/assets/images/brand/brand2.png", width: 162, height: 60 },
-  { src: "/assets/images/brand/brand3.png", width: 131, height: 72 },
-  { src: "/assets/images/brand/brand4.png", width: 183, height: 44 },
-];
+import { brandsContent } from "@/data/home1/brands";
 
-const brandSlides = [...brands, ...brands];
+const brandSlides = [...brandsContent.logos, ...brandsContent.logos];
 
 export default function Brands({
   parentClass = "neural-playground ibt-section-gap",
 }: {
   parentClass?: string;
 }) {
+  const { headline, layerImage } = brandsContent;
   return (
     <section className={parentClass}>
       <div className="container">
@@ -26,8 +22,8 @@ export default function Brands({
           <div className="col-lg-2 col-md-2">
             <div className="neural-img">
               <Image
-                alt="AI Agency & Technology HTML Template"
-                src="/assets/images/layers/layer.png"
+                alt="Decorative layer"
+                src={layerImage}
                 width={455}
                 height={642}
               />
@@ -36,8 +32,9 @@ export default function Brands({
           <div className="col-lg-10 col-md-10">
             <div className="neural-content p-0">
               <h2 className="gradient-title">
-                Tinker with a <span>Neural Network right here</span> in your
-                browser. Don&apos;t worry, you can&apos;t break it. We Promise.
+                {headline.lead}
+                <span>{headline.highlight}</span>
+                {headline.trail}
               </h2>
               <Swiper
                 className="brand"
@@ -57,10 +54,10 @@ export default function Brands({
                 }}
               >
                 {brandSlides.map((brand, i) => (
-                  <SwiperSlide key={i}>
-                    <a href="#" title="">
+                  <SwiperSlide key={`${brand.src}-${i}`}>
+                    <a href="#">
                       <Image
-                        alt="AI Agency & Technology HTML Template"
+                        alt={brand.alt}
                         src={brand.src}
                         width={brand.width}
                         height={brand.height}

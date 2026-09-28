@@ -93,8 +93,8 @@ export default function TitleSplitProvider({ children }: { children: ReactNode }
 
         tweensRef.current.set(element, tween)
         initializedRef.current.add(element)
-      } catch (error) {
-        console.error('Error creating SplitText animation:', error)
+      } catch {
+        // Animation is a progressive enhancement — silently skip on failure.
       }
     })
 

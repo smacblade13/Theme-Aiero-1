@@ -2,8 +2,11 @@ import Contact from "@/components/contact/Contact";
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
 export const metadata = {
-  title: "AI Consulting | Aiero AI Agency & Technology",
-  description: "Aiero AI Agency & Technology React Nextjs Template - Demo home page - AI Consulting. 01.Home.",
+  title: {
+    absolute: "Aiero — AI Agency & Technology",
+  },
+  description:
+    "Aiero is a modern AI agency template for startups building intelligent products — neural networks, machine learning, and data science services.",
 };
 import About from "@/components/homes/home-1/About";
 import Blogs from "@/components/homes/home-1/Blogs";

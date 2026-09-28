@@ -1,11 +1,17 @@
-# Neutralized links — index1
+# Neutralized links
 
-These internal links pointed at routes this standalone site does not serve, so they were
+These internal links pointed at routes this site does not serve, so they were
 rewritten to `"#"`. Restore them if you add the corresponding pages back.
 
-The demo's own route `/index1` was pointed at `/` instead, since it is this site's home page.
+**Routes this site serves:** `/`, `/about`, `/services`, `/contact`
 
-Routes this site serves: `/`
+The following have been **restored** from the original neutralized list:
+
+- `/about-us` → now `/about` (`data/mobileMenu.ts`, `data/footer.ts`)
+- `/service` → now `/services` (`data/mobileMenu.ts`)
+- `/contact` (`data/mobileMenu.ts`, `data/footer.ts`)
+
+The remaining routes below still point to `"#"`:
 
 ## `/index15` — 3 occurrences
 

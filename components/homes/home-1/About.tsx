@@ -3,8 +3,10 @@ import Image from "next/image";
 
 import TitleSplitWrapper from "@/components/common/TitleSplitWrapper";
 import SubTitleWrapper from "@/components/common/SubTitleWrapper";
+import { aboutContent } from "@/data/home1/about";
 
 export default function About() {
+  const { styleText, eyebrow, title, paragraphs, cta, image } = aboutContent;
   return (
     <section className="about-us-sec">
       <div className="container">
@@ -12,39 +14,28 @@ export default function About() {
           <div className="col-lg-5">
             <div className="about-img">
               <Image
-                alt="AI Agency & Technology HTML Template"
-                src="/assets/images/layers/person.png"
-                width={805}
-                height={1338}
+                alt={image.alt}
+                src={image.src}
+                width={image.width}
+                height={image.height}
               />
             </div>
           </div>
           <div className="col-lg-7">
             <div className="about-content">
-              <h2 className="style-text">Neural Networks</h2>
+              <h2 className="style-text">{styleText}</h2>
               <div className="sec-title mb-0 white">
-                <SubTitleWrapper>about</SubTitleWrapper>
+                <SubTitleWrapper>{eyebrow}</SubTitleWrapper>
                 <TitleSplitWrapper tag="h2" className="title animated-heading">
-                  Pioneers in artificial intelligence solutions and innovation
+                  {title}
                 </TitleSplitWrapper>
-                <p>
-                  At AiDo, we are a leading AI services provider dedicated to
-                  delivering innovative solutions that leverage artificial
-                  intelligence to transform businesses.
-                </p>
-                <p className="paragraph">
-                  Our team of experts specializes in cutting-edge AI
-                  technologies, offering customized strategies and
-                  implementations to help you stay ahead in today&apos;s data-driven
-                  world. Unlock the full potential of AI with XXLando, your
-                  trusted partner in the future of intelligent technology
-                </p>
-                <Link
-                  href={`/service`}
-                  title=""
-                  className="ibt-btn ibt-btn-outline"
-                >
-                  <span>Explore More</span>
+                {paragraphs.map((paragraph, i) => (
+                  <p key={i} className={i > 0 ? "paragraph" : undefined}>
+                    {paragraph}
+                  </p>
+                ))}
+                <Link href={cta.href} className="ibt-btn ibt-btn-outline">
+                  <span>{cta.label}</span>
                   <i className="icon-arrow-top" />
                 </Link>
               </div>

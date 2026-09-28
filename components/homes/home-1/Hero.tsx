@@ -1,8 +1,12 @@
 import Link from "next/link";
 
 import VideoPopupButton from "@/components/common/VideoPopupButton";
+import { heroContent } from "@/data/home1/hero";
 
 export default function Hero() {
+  const { titleLead, titleHighlight, titleTrail, subtitle, cta, video } =
+    heroContent;
+
   return (
     <section className="hero-style1">
       <div className="hero-info">
@@ -11,26 +15,20 @@ export default function Hero() {
             <div className="col-lg-8">
               <div className="hero-title">
                 <h1 className="gradient-title">
-                  Unlocking the potential of <span>Neural Networks </span>
-                  features
+                  {titleLead}
+                  <span>{titleHighlight}</span>
+                  {titleTrail}
                 </h1>
               </div>
             </div>
             <div className="col-lg-4">
               <div className="hero-content">
-                <p>
-                  Highlight the potential benefits of Neural Networks, such as
-                  improved decision-making, predictive analytics, and
-                  automation.
-                </p>
+                <p>{subtitle}</p>
                 <Link
-                  href={`/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title=""
+                  href={cta.href}
                   className="ibt-btn ibt-btn-secondary"
                 >
-                  <span>Discover</span>
+                  <span>{cta.label}</span>
                   <i className="icon-arrow-top" />
                 </Link>
               </div>
@@ -42,12 +40,12 @@ export default function Hero() {
         <div className="container2">
           <div className="banner-content">
             <span className="sub-title" id="animatedHeading">
-              Elevate your business with our innovative solutions
+              {video.banner.subTitle}
             </span>
-            <h1 className="title2">Aiero</h1>
-            <p>Creative solutions for your business</p>
-            <VideoPopupButton videoUrl="https://www.youtube.com/embed/aircAruvnKk">
-              <i className="fa fa-play" /> Watch Video
+            <h1 className="title2">{video.banner.title}</h1>
+            <p>{video.banner.caption}</p>
+            <VideoPopupButton videoUrl={video.embedUrl}>
+              <i className="fa fa-play" /> {video.banner.buttonLabel}
             </VideoPopupButton>
           </div>
         </div>

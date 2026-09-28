@@ -2,12 +2,12 @@ import type { FooterLinkItem, FooterLinkGroup } from "@/types/footer";
 
 /** Company links - used in Footer1, Footer2, Footer4 */
 export const footerCompanyLinks: FooterLinkItem[] = [
-  { label: "About", href: "#" },
+  { label: "About", href: "/about" },
   { label: "Expertise", href: "#" },
   { label: "Sustainability", href: "#" },
   { label: "News & Media", href: "#" },
   { label: "Case Studies", href: "#" },
-  { label: "Contacts", href: "#" },
+  { label: "Contacts", href: "/contact" },
 ];
 
 /** Services links - used in Footer1, Footer2, Footer3 */

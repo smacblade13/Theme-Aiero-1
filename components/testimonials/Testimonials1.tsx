@@ -5,18 +5,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 
-const testimonials = [
-  {
-    quote:
-      "Working with Aiero has been a game-changer for our business. Their AI solutions have revolutionized our operations, enabling us to automate repetitive tasks and make data-driven decisions with ease. We couldn&apos;t be happier with the results.\"",
-    author: "- John Anderson, CEO of XYZ Company",
-  },
-  {
-    quote:
-      "Working with Aiero has been a game-changer for our business. Their AI solutions have revolutionized our operations, enabling us to automate repetitive tasks and make data-driven decisions with ease. We couldn&apos;t be happier with the results.\"",
-    author: "- John Anderson, CEO of XYZ Company",
-  },
-];
+import { testimonialsContent } from "@/data/home1/testimonials";
 
 export default function Testimonials1() {
   return (
@@ -33,10 +22,10 @@ export default function Testimonials1() {
         nextEl: ".swiper-button-next",
       }}
     >
-      {testimonials.map((item, i) => (
-        <SwiperSlide key={i}>
+      {testimonialsContent.items.map((item) => (
+        <SwiperSlide key={item.id}>
           <Image
-            alt="AI Agency & Technology HTML Template"
+            alt="Testimonial quote mark"
             src="/assets/images/icon/comas.svg"
             width={47}
             height={41}

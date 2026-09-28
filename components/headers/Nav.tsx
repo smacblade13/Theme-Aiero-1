@@ -72,9 +72,9 @@ export default function Nav() {
           </li>
           <li className="mega-menu-column">
             <ThemeTrigger>
-              <Link href={`/index1`} className="darkModeTriggerImg">
+              <Link href="/" className="darkModeTriggerImg">
                 <Image
-                  alt="AI Agency & Technology HTML Template"
+                  alt="Dark mode preview"
                   src="/assets/images/event/dark-version.png"
                   width={377}
                   height={351}
@@ -82,9 +82,9 @@ export default function Nav() {
               </Link>
             </ThemeTrigger>
             <ThemeTrigger>
-              <Link href={`/index1`} className="darkModeTriggerImg2">
+              <Link href="/" className="darkModeTriggerImg2">
                 <Image
-                  alt="AI Agency & Technology HTML Template"
+                  alt="Light mode preview"
                   src="/assets/images/event/light-version.png"
                   width={377}
                   height={351}

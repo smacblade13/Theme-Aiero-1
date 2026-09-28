@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { footerLinkGroups } from "@/data/footer";
+import { site } from "@/data/site";
 
 export default function Footer1() {
   return (
@@ -9,11 +10,14 @@ export default function Footer1() {
       <div className="footer-top">
         <div className="container">
           <div className="footer-content">
-            <h2 className="title">It’s blow your mind! Meet Neural Networks</h2>
-            <a href="#" title="" className="ibt-btn ibt-btn-outline">
-              <span>Get a Quote</span>
+            <h2 className="title">{site.brand.tagline}</h2>
+            <Link
+              href={site.nav.primaryCta.href}
+              className="ibt-btn ibt-btn-outline"
+            >
+              <span>{site.nav.primaryCta.label}</span>
               <i className="icon-arrow-top" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -24,55 +28,27 @@ export default function Footer1() {
               <div className="about-widget footer-widget">
                 <div className="footer-logo">
                   <Image
-                    alt="AI Agency & Technology HTML Template"
-                    src="/assets/images/logo2.svg"
+                    alt={`${site.brand.name} logo`}
+                    src={site.brand.logoDark}
                     width={110}
                     height={20}
                   />
                 </div>
                 <ul className="social-icon">
-                  <li>
-                    <a
-                      href="https://www.facebook.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title=""
-                    >
-                      <i className="fab fa-facebook-f" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="http://www.twitter.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title=""
-                    >
-                      <i className="fab fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="http://www.linkedin.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title=""
-                    >
-                      <i className="fab fa-linkedin-in" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.youtube.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title=""
-                    >
-                      <i className="fab fa-youtube" />
-                    </a>
-                  </li>
+                  {site.socials.map((social) => (
+                    <li key={social.platform}>
+                      <a
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                      >
+                        <i className={social.icon} />
+                      </a>
+                    </li>
+                  ))}
                 </ul>
-                <h2 className="title">since 2025</h2>
+                <h2 className="title">since {site.legal.foundedYear}</h2>
               </div>
             </div>
             <div className="col-xl-4 col-lg-6">
@@ -84,13 +60,9 @@ export default function Footer1() {
                       {group.links.map((item) => (
                         <li key={item.label}>
                           {item.href.startsWith("/") ? (
-                            <Link href={item.href} title="">
-                              {item.label}
-                            </Link>
+                            <Link href={item.href}>{item.label}</Link>
                           ) : (
-                            <a href={item.href} title="">
-                              {item.label}
-                            </a>
+                            <a href={item.href}>{item.label}</a>
                           )}
                         </li>
                       ))}
@@ -106,8 +78,8 @@ export default function Footer1() {
         <div className="container">
           <div className="footer-box">
             <p>
-              <a href="#">©Aiero</a> {new Date().getFullYear()}. All rights
-              reserved.
+              <Link href="/">©{site.legal.copyrightHolder}</Link>{" "}
+              {new Date().getFullYear()}. All rights reserved.
             </p>
             <span>
               Terms of use <a href="#">Privacy Policy</a>
