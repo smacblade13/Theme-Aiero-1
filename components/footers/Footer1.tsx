@@ -81,9 +81,6 @@ export default function Footer1() {
               <Link href="/">©{site.legal.copyrightHolder}</Link>{" "}
               {new Date().getFullYear()}. All rights reserved.
             </p>
-            <span>
-              Terms of use <a href="#">Privacy Policy</a>
-            </span>
           </div>
         </div>
       </div>

@@ -3,9 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useUi } from "@/context/UiContext";
+import { site } from "@/data/site";
 
 export default function Sidemenu() {
   const { closeSideNav, sideNavOpen } = useUi();
+  const telHref = `tel:${site.contact.phone.replace(/\s+/g, "")}`;
+  const mailHref = `mailto:${site.contact.email}`;
+
   return (
     <div className={`side-menu ${sideNavOpen ? "active" : ""}`} id="sideMenu">
       <div
@@ -13,62 +17,52 @@ export default function Sidemenu() {
         id="overlay"
         onClick={closeSideNav}
       />
-      <a href="#" className="close-btn" id="closeBtn" onClick={closeSideNav}>
+      <button
+        type="button"
+        className="close-btn"
+        id="closeBtn"
+        onClick={closeSideNav}
+      >
         <i className="fa fa-close" /> close
-      </a>
+      </button>
       <div className="menu-content">
-        <Link href={`/index1`} className="logo">
+        <Link href="/" className="logo">
           <Image
-            alt="logo"
-            src="/assets/images/logo2.svg"
+            alt={`${site.brand.name} logo`}
+            src={site.brand.logoDark}
             width={110}
             height={20}
           />
         </Link>
         <div className="sidebar-menu">
           <h4 className="title">contacts</h4>
-          <p>
-            USA, New York - 1060 <br />
-            Str. First Avenue 1
-          </p>
-          <a href="tel:+13685678954" title="" className="nmbr">
-            800 100 975 20 34
+          <p>{site.contact.address}</p>
+          <a href={telHref} className="nmbr">
+            {site.contact.phone}
           </a>
-          <a href="tel:8003508431" title="" className="nmbr">
-            + (123) 1800-234-5678
+          <a href={mailHref} className="email">
+            {site.contact.email}
           </a>
-          <a href="mailto:aiero@mail.co" className="email">
-            aiero@mail.co
-          </a>
-          <a
-            href="#"
-            title=""
+          <Link
+            href={site.nav.primaryCta.href}
             className="ibt-btn ibt-btn-outline-3 ibt-btn-rounded"
           >
-            <span>Get in Touch</span>
-          </a>
+            <span>{site.nav.primaryCta.label}</span>
+          </Link>
         </div>
         <ul className="social-icon">
-          <li>
-            <a href="www.facebook.com" title="">
-              <i className="fab fa-facebook-f" />
-            </a>
-          </li>
-          <li>
-            <a href="https://x.com/i/flow/login?lang=en" title="">
-              <i className="fab fa-twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linked.com" title="">
-              <i className="fab fa-linkedin-in" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com" title="">
-              <i className="fab fa-youtube" />
-            </a>
-          </li>
+          {site.socials.map((social) => (
+            <li key={social.platform}>
+              <a
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+              >
+                <i className={social.icon} />
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
