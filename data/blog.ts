@@ -9,7 +9,7 @@ import type {
 export const blogGridPosts: BlogGridPost[] = [
   {
     id: "blog1-1",
-    imageSrc: "/assets/images/blog/blog1-1.png",
+    imageSrc: "https://picsum.photos/seed/aiero-blog1/420/314",
     imageWidth: 420,
     imageHeight: 314,
     meta: "24 AUG. 2024 / Ann Miller",
@@ -20,7 +20,7 @@ export const blogGridPosts: BlogGridPost[] = [
   },
   {
     id: "blog1-2",
-    imageSrc: "/assets/images/blog/blog1-2.png",
+    imageSrc: "https://picsum.photos/seed/aiero-blog2/420/314",
     imageWidth: 420,
     imageHeight: 314,
     meta: "24 AUG. 2024 / Ann Miller",
@@ -31,7 +31,7 @@ export const blogGridPosts: BlogGridPost[] = [
   },
   {
     id: "blog1-3",
-    imageSrc: "/assets/images/blog/blog1-3.png",
+    imageSrc: "https://picsum.photos/seed/aiero-blog3/420/314",
     imageWidth: 420,
     imageHeight: 314,
     meta: "24 AUG. 2024 / Ann Miller",

@@ -26,7 +26,7 @@ export default function Testimonials1() {
         <SwiperSlide key={item.id}>
           <Image
             alt="Testimonial quote mark"
-            src="/assets/images/icon/comas.svg"
+            src="https://picsum.photos/seed/aiero-comas/47/41"
             width={47}
             height={41}
           />

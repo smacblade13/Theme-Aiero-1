@@ -10,7 +10,7 @@ export const aboutContent: AboutContent = {
   ],
   cta: { label: "Explore More", href: "/services" },
   image: {
-    src: "/assets/images/layers/person.png",
+    src: "https://picsum.photos/seed/aiero-person/805/1338",
     width: 805,
     height: 1338,
     alt: "Aiero team member",

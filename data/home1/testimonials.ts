@@ -6,7 +6,7 @@ export const testimonialsContent: TestimonialsContent = {
   happyClientsLabel: "Happy clients",
   happyClientsCount: 250,
   maskImage: {
-    src: "/assets/images/layers/mask.png",
+    src: "https://picsum.photos/seed/aiero-mask/740/792",
     width: 740,
     height: 792,
   },

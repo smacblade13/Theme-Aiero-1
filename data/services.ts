@@ -4,7 +4,7 @@ export const serviceSec6Cards: ServiceCardSec6[] = [
   {
     id: "s6-1",
     variant: "default",
-    imageSrc: "/assets/images/service/service6-1.png",
+    imageSrc: "https://picsum.photos/seed/aiero-s6-1/456/561",
     imageWidth: 456,
     imageHeight: 561,
     title: "Neural Network Development",
@@ -14,7 +14,7 @@ export const serviceSec6Cards: ServiceCardSec6[] = [
   {
     id: "s6-2",
     variant: "default",
-    imageSrc: "/assets/images/service/service6-2.png",
+    imageSrc: "https://picsum.photos/seed/aiero-s6-2/456/561",
     imageWidth: 456,
     imageHeight: 561,
     title: "Training & Optimization",
@@ -25,7 +25,7 @@ export const serviceSec6Cards: ServiceCardSec6[] = [
   {
     id: "s6-3",
     variant: "compact",
-    imageSrc: "/assets/images/service/service6-3.png",
+    imageSrc: "https://picsum.photos/seed/aiero-s6-3/420/191",
     imageWidth: 420,
     imageHeight: 191,
     title: "Neural Network Integration",
@@ -34,7 +34,7 @@ export const serviceSec6Cards: ServiceCardSec6[] = [
   {
     id: "s6-4",
     variant: "icon",
-    iconSrc: "/assets/images/icon/phone.svg",
+    iconSrc: "https://picsum.photos/seed/aiero-s6-4/57/57",
     iconWidth: 57,
     iconHeight: 57,
     title: "Neural Network Consulting",
@@ -45,7 +45,7 @@ export const serviceSec6Cards: ServiceCardSec6[] = [
   {
     id: "s6-5",
     variant: "default",
-    imageSrc: "/assets/images/service/service6-5.png",
+    imageSrc: "https://picsum.photos/seed/aiero-s6-5/490/561",
     imageWidth: 490,
     imageHeight: 561,
     title: "Neural Network Support",

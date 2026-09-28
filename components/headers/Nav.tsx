@@ -75,7 +75,7 @@ export default function Nav() {
               <Link href="/" className="darkModeTriggerImg">
                 <Image
                   alt="Dark mode preview"
-                  src="/assets/images/event/dark-version.png"
+                  src="https://picsum.photos/seed/aiero-nav-dark/377/351"
                   width={377}
                   height={351}
                 />
@@ -85,7 +85,7 @@ export default function Nav() {
               <Link href="/" className="darkModeTriggerImg2">
                 <Image
                   alt="Light mode preview"
-                  src="/assets/images/event/light-version.png"
+                  src="https://picsum.photos/seed/aiero-nav-light/377/351"
                   width={377}
                   height={351}
                 />

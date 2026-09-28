@@ -4,7 +4,7 @@ export const faqsContent: FaqsContent = {
   eyebrow: "faq",
   title: "Everything you need to know about",
   image: {
-    src: "/assets/images/layers/layer2.png",
+    src: "https://picsum.photos/seed/aiero-faq/647/844",
     width: 647,
     height: 844,
   },
