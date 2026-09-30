@@ -8,7 +8,7 @@ import type {
 export const featureItems: FeatureItem[] = [
   {
     id: "f1",
-    iconSrc: "https://picsum.photos/seed/aiero-f1/24/24",
+    iconSrc: "/assets/images/service/ser2-1.svg",
     iconWidth: 24,
     iconHeight: 24,
     title: "AI Technology",
@@ -17,7 +17,7 @@ export const featureItems: FeatureItem[] = [
   },
   {
     id: "f2",
-    iconSrc: "https://picsum.photos/seed/aiero-f2/24/24",
+    iconSrc: "/assets/images/service/ser2-2.svg",
     iconWidth: 24,
     iconHeight: 24,
     title: "Tailored solutions",
@@ -26,7 +26,7 @@ export const featureItems: FeatureItem[] = [
   },
   {
     id: "f3",
-    iconSrc: "https://picsum.photos/seed/aiero-f3/28/28",
+    iconSrc: "/assets/images/service/ser2-3.svg",
     iconWidth: 28,
     iconHeight: 28,
     title: "Cutting-edge technology",
@@ -35,7 +35,7 @@ export const featureItems: FeatureItem[] = [
   },
   {
     id: "f4",
-    iconSrc: "https://picsum.photos/seed/aiero-f4/26/26",
+    iconSrc: "/assets/images/service/ser2-1.svg",
     iconWidth: 26,
     iconHeight: 26,
     title: "Modern development",

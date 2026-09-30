@@ -2,6 +2,7 @@
 
 .about-us-sec {
   position: relative;
+  overflow: hidden;
   background-image: url(/assets/images/bg/bg.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -57,28 +58,35 @@
 }
 .about-img {
   position: absolute;
+  top: 60px;
   bottom: 0;
-  left: 0;
+  left: -300px;
+  overflow: hidden;
+  height: 100%;
   @include smd {
     position: static;
+    height: auto;
+    overflow: visible;
     margin-left: -12px;
   }
   img {
     border-radius: 25px;
     object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
     @include xl {
-      width: 710px;
-      height: 100%;
+      width: 1000px;
       object-fit: contain;
     }
     @include lg {
-      width: 653px;
+      width: 920px;
     }
     @include ml {
-      width: 582px;
+      width: 820px;
     }
     @include md {
-      width: 505px;
+      width: 700px;
     }
     @include sm {
       width: 100%;

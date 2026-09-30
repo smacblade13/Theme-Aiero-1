@@ -10,9 +10,9 @@ export const aboutContent: AboutContent = {
   ],
   cta: { label: "Explore More", href: "/services" },
   image: {
-    src: "/assets/images/service/service6-2.png",
-    width: 456,
-    height: 572,
-    alt: "Neural network visual",
+    src: "/assets/images/about/3d-woman-shape-glowing.jpg",
+    width: 700,
+    height: 880,
+    alt: "3D glowing AI visual",
   },
 };
