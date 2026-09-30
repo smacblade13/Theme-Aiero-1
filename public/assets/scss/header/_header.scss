@@ -1,9 +1,10 @@
 @use "../global" as *;
 
 .vs-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
+  z-index: 99999;
   @include ml {
     background-color: var(--color-content-white);
   }

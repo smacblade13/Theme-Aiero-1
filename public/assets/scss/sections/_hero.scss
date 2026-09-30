@@ -1,6 +1,9 @@
 @use "../global" as *;
 
 .hero-style1 {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 60px 60px;
   padding: 239px 0 21px;
   background-color: #ecf0f4;
   @include xl {
@@ -30,17 +33,7 @@
 }
 .hero-info {
   position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    top: -17%;
-    left: 0px;
-    width: 100%;
-    height: 1176px;
-    background-image: url("https://picsum.photos/seed/aiero-hero-eclipse/1920/1176");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  padding: 0 60px;
   @include xl {
     padding: 0 40px;
   }
@@ -101,8 +94,8 @@
   }
   p {
     font-weight: 500;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 34px;
     margin-bottom: 29px;
     @include sm {
       margin-bottom: 30px;
@@ -113,11 +106,9 @@
   position: relative;
   margin: 85px 20px 0;
   overflow: hidden;
-  background-image: url("https://picsum.photos/seed/aiero-hero-banner/1920/720");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  background-color: transparent;
   border-radius: 25px;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
   @include ml {
     margin: 75px 20px 0;
   }
@@ -127,15 +118,16 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 322px;
-    height: 102px;
-    background-image: url("https://picsum.photos/seed/aiero-hero-corner/322/102");
+    inset: 0;
+    background-image: linear-gradient(108deg, #9B4FD4 0%, #6B3EC8 100%);
+    opacity: 0.5;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    z-index: 0;
   }
 }
 .banner-content {
   position: relative;
+  z-index: 1;
   padding: 70px 0 0 78px;
   &::after {
     content: "";
@@ -144,7 +136,8 @@
     right: 15%;
     width: 366px;
     height: 366px;
-    background-image: url("https://picsum.photos/seed/aiero-hero-dots/366/366");
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 4px, transparent 4px);
+    background-size: 40px 40px;
     @include md {
       bottom: 0;
       right: 3%;
@@ -203,8 +196,8 @@
   }
   .title2 {
     position: relative;
-    font-size: 350px;
-    line-height: 237px;
+    font-size: 240px;
+    line-height: 190px;
     margin-bottom: 0;
     font-weight: 600;
     color: var(--color-surface-light-1);
@@ -235,15 +228,37 @@
       bottom: 0;
     }
   }
+  .video-popup {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    background-color: #ecf0f4;
+    border-radius: 50px 0 0 0;
+    padding: 28px 44px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: background-color 0.3s ease;
+    i {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+    }
+    &:hover {
+      background-color: #dde3e9;
+    }
+  }
   p {
     position: absolute;
-    bottom: 107px;
+    bottom: 145px;
     right: 49px;
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 700;
     margin-bottom: 0;
     color: var(--color-content-white);
-    max-width: 118px;
+    max-width: 160px;
     letter-spacing: -0.03em;
   }
 }

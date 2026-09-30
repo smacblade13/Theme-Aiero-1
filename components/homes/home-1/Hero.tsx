@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="hero-style1">
-      <div className="hero-info">
+<div className="hero-info">
         <div className="container-fluid">
           <div className="row end">
             <div className="col-lg-8">
