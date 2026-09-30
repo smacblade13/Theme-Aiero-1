@@ -11,10 +11,10 @@
 .header-menu-area {
   position: relative;
   background-color: #ffffff;
-  border-radius: 25px;
+  border-radius: 0;
   padding: 19px 28px 21px 37px;
   transition: all 0.3s ease;
-  margin-top: 18px;
+  margin-top: 0;
   @include ml {
     padding: 12px 4px 15px;
     margin-top: 0;
@@ -511,13 +511,13 @@
   right: 0;
   transform: translateY(-100%);
   background-color: var(--color-content-white);
-  border-radius: 0 0 20px 20px;
+  border-radius: 0;
   transition:
     transform 0.5s ease-in-out,
     box-shadow 0.5s ease-in-out;
   will-change: transform;
   z-index: 99999;
-  margin: 0 20px;
+  margin: 0;
   @include ml {
     margin: 0;
     padding: 0 16px 0 20px;
