@@ -54,6 +54,22 @@ export const serviceSec6Cards: ServiceCardSec6[] = [
     contentClassName: "v2",
     cardClassName: "ser-card v5",
   },
+  {
+    id: "s6-6",
+    variant: "default",
+    title: "Machine Learning",
+    description:
+      "Building intelligent systems that learn and adapt from data to deliver smarter outcomes.",
+    cardClassName: "ser-card",
+  },
+  {
+    id: "s6-7",
+    variant: "default",
+    title: "Data Analytics",
+    description:
+      "Transform raw data into actionable insights that drive strategic business decisions.",
+    cardClassName: "ser-card",
+  },
 ];
 
 export const serviceSec10Cards: ServiceCard10[] = [

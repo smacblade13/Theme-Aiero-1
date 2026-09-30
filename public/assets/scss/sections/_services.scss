@@ -24,7 +24,88 @@
 }
 .ser-card {
   position: relative;
-  height: 100%;
+  height: 480px;
+  background-image: linear-gradient(108deg, #9B4FD4 0%, #6B3EC8 100%);
+  border-radius: 25px;
+  margin-bottom: 0;
+  overflow: hidden;
+  // Card 1 — sky blue + sphero
+  &.ser-card--sky {
+    background-image: none;
+    background-color: #87CEEB;
+    .ser-card__deco {
+      display: block;
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      opacity: 0.9;
+      transform: rotate(-90deg);
+    }
+  }
+  // Card 2 — service6-2 image with dots, text on top
+  &.ser-card--dots {
+    background-image: url(/assets/images/service/service6-2.png);
+    background-size: cover;
+    background-position: center;
+    .ser-content {
+      top: 46px;
+      bottom: auto;
+    }
+  }
+  // Card 3 — neural / service6-3
+  // Card 3 — neural / center-aligned black text
+  &.ser-card--neural {
+    background-image: url(/assets/images/service/service6-3.png);
+    background-size: cover;
+    background-position: center;
+    .ser-content {
+      top: 50%;
+      bottom: auto;
+      transform: translateY(-50%);
+    }
+    .ser-content .title,
+    .ser-content .title a,
+    .ser-content p {
+      color: #000000;
+    }
+  }
+  // Card 4 — picsum + blue overlay, content at bottom
+  &.ser-card--blue {
+    background-image: url("https://picsum.photos/seed/aiero-ser4/600/700");
+    background-size: cover;
+    background-position: center;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(30, 80, 200, 0.55);
+      border-radius: inherit;
+      z-index: 0;
+    }
+    .ser-content {
+      z-index: 1;
+      bottom: 46px;
+      top: auto;
+      transform: none;
+    }
+    .ser-btn {
+      z-index: 1;
+      bottom: 0;
+      right: 10px;
+    }
+  }
+  // Stacked half cards
+  &.ser-card--half-sm {
+    height: 30%;
+    flex-shrink: 0;
+  }
+  &.ser-card--half-lg {
+    height: 70%;
+    flex-grow: 1;
+  }
   @include md {
     height: 539px;
   }
@@ -38,11 +119,8 @@
     width: 100% !important;
     height: 350px;
   }
-  > img {
-    height: 100%;
-    width: 100%;
-    border-radius: 25px;
-    object-fit: cover;
+  > img:not(.ser-card__deco) {
+    display: none;
   }
   &::before {
     content: "";
@@ -77,28 +155,28 @@
     max-width: 275px !important;
   }
   .title {
-    font-size: 25px;
-    line-height: 35px;
-    font-weight: 400;
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
     margin-bottom: 14px;
     color: var(--color-content-white);
     @include xs {
-      font-size: 22px;
+      font-size: 26px;
     }
     @include vxs {
       max-width: 226px;
     }
     a {
-      transition: all 03s ease;
+      color: inherit;
+      transition: all 0.3s ease;
       &:hover {
-        color: var(--color-content-white);
         text-decoration: underline;
       }
     }
   }
   p {
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 28px;
     margin-bottom: 0;
     color: var(--color-content-white);
   }
