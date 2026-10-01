@@ -13,12 +13,20 @@ export default function Faqs() {
       <div className="container">
         <div className="row">
           <div className="col-lg-4">
-            <div className="faq-img">
+            <div
+              className="faq-img"
+              style={{
+                transform: "translateX(-160px) translateY(-300px)",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
               <Image
                 alt="Decorative layer"
                 src={image.src}
                 width={image.width}
                 height={image.height}
+                style={{ width: "100%", height: "auto" }}
               />
             </div>
           </div>

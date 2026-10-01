@@ -3,7 +3,7 @@ import type { Services2Item } from "@/types/home1";
 export const services2Items: Services2Item[] = [
   {
     id: "blockchain",
-    iconSrc: "https://picsum.photos/seed/aiero-svc-blockchain/73/73",
+    iconSrc: "/assets/images/service/ser2-1.svg",
     iconWidth: 73,
     iconHeight: 73,
     title: "Blockchain Technology",
@@ -16,7 +16,7 @@ export const services2Items: Services2Item[] = [
   },
   {
     id: "vr-ar",
-    iconSrc: "https://picsum.photos/seed/aiero-svc-vr/74/73",
+    iconSrc: "/assets/images/service/ser2-2.svg",
     iconWidth: 74,
     iconHeight: 73,
     title: "Virtual and Augmented Reality",
@@ -29,7 +29,7 @@ export const services2Items: Services2Item[] = [
   },
   {
     id: "data-analytics",
-    iconSrc: "https://picsum.photos/seed/aiero-svc-analytics/69/71",
+    iconSrc: "/assets/images/service/ser2-3.svg",
     iconWidth: 69,
     iconHeight: 71,
     title: "Predictive Data Analytics",

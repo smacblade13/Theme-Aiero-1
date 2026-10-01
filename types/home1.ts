@@ -85,6 +85,7 @@ export type FactsContent = SectionHeader & { items: Fact[] };
 
 export type Testimonial = {
   id: string;
+  icon: string;
   quote: string;
   author: string;
 };

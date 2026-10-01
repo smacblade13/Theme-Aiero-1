@@ -23,6 +23,7 @@ export default function TestimonialsSec() {
                 src={maskImage.src}
                 width={maskImage.width}
                 height={maskImage.height}
+                style={{ display: "block", margin: "0 auto" }}
               />
               <div className="title-area2">
                 <div className="sec-title white">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { AccordionItem } from "@/types/common";
 
 export type { AccordionItem } from "@/types/common";
@@ -12,6 +12,31 @@ type AccordionProps = {
   itemClassName?: string;
   lastItemClassName?: string;
 };
+
+function AccordionPanel({ answer, isOpen }: { answer: string; isOpen: boolean }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (ref.current) {
+      setHeight(isOpen ? ref.current.scrollHeight : 0);
+    }
+  }, [isOpen]);
+
+  return (
+    <div
+      style={{
+        height: `${height}px`,
+        overflow: "hidden",
+        transition: "height 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+      }}
+    >
+      <div ref={ref} className="accordion-body">
+        {answer}
+      </div>
+    </div>
+  );
+}
 
 export default function Accordion({
   items,
@@ -56,13 +81,10 @@ export default function Accordion({
             </h2>
             <div
               id={collapseId}
-              className={`accordion-collapse collapse${isOpen ? " show" : ""}`}
+              className="accordion-collapse"
               aria-labelledby={headerId}
-              data-bs-parent={`#${accordionId}`}
             >
-              <div className="accordion-body">
-                {item.answer}
-              </div>
+              <AccordionPanel answer={item.answer} isOpen={isOpen} />
             </div>
           </div>
         );

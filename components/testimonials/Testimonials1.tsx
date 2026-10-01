@@ -25,10 +25,10 @@ export default function Testimonials1() {
       {testimonialsContent.items.map((item) => (
         <SwiperSlide key={item.id}>
           <Image
-            alt="Testimonial quote mark"
-            src="https://picsum.photos/seed/aiero-comas/47/41"
+            alt="Testimonial icon"
+            src={item.icon}
             width={47}
-            height={41}
+            height={47}
           />
           <p>{item.quote}</p>
           <span>{item.author}</span>
