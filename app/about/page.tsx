@@ -1,6 +1,7 @@
 import Header1 from "@/components/headers/Header1";
 import Footer1 from "@/components/footers/Footer1";
 import PageHeader from "@/components/common/PageHeader";
+import AboutIntro from "@/components/about/AboutIntro";
 import About from "@/components/homes/home-1/About";
 import Facts from "@/components/homes/home-1/Facts";
 import Testimonials from "@/components/homes/home-1/Testimonials";
@@ -23,7 +24,10 @@ export default function AboutPage() {
         title={header.title}
         intro={header.intro}
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
+        staffText="Aiero"
+        bannerClass="page-banner page-banner-about"
       />
+      <AboutIntro />
       <About />
       <Facts />
       <Testimonials />
