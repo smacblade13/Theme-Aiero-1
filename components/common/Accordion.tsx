@@ -32,7 +32,9 @@ function AccordionPanel({ answer, isOpen }: { answer: string; isOpen: boolean })
       }}
     >
       <div ref={ref} className="accordion-body">
-        {answer}
+        {answer.split("\n\n").map((para, i) => (
+          <p key={i}>{para}</p>
+        ))}
       </div>
     </div>
   );

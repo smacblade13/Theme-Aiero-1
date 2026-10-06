@@ -57,6 +57,5 @@ export const site: SiteConfig = {
   },
   legal: {
     copyrightHolder: "Aiero",
-    foundedYear: 2025,
   },
 };

@@ -50,6 +50,5 @@ export type SiteConfig = {
   seo: SeoConfig;
   legal: {
     copyrightHolder: string;
-    foundedYear: number;
   };
 };

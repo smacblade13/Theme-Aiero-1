@@ -24,7 +24,7 @@ export default function Footer1() {
       <div className="widget-area ibt-section-gapTop">
         <div className="container">
           <div className="row">
-            <div className="col-xl-8 col-lg-6">
+            <div className="col-xl-8 col-lg-6 col-sm-12">
               <div className="about-widget footer-widget">
                 <div className="footer-logo">
                   <Image
@@ -48,29 +48,27 @@ export default function Footer1() {
                     </li>
                   ))}
                 </ul>
-                <h2 className="title">since {site.legal.foundedYear}</h2>
+                <h2 className="title">since {new Date().getFullYear()}</h2>
               </div>
             </div>
-            <div className="col-xl-4 col-lg-6">
-              <div className="footer-menu">
-                {footerLinkGroups.map((group) => (
-                  <div key={group.title} className="footer-links footer-widget">
-                    <h4 className="widget-title">{group.title}</h4>
-                    <ul>
-                      {group.links.map((item) => (
-                        <li key={item.label}>
-                          {item.href.startsWith("/") ? (
-                            <Link href={item.href}>{item.label}</Link>
-                          ) : (
-                            <a href={item.href}>{item.label}</a>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+            {footerLinkGroups.map((group) => (
+              <div key={group.title} className="col-xl-2 col-lg-3 col-sm-6">
+                <div className="footer-links footer-widget">
+                  <h4 className="widget-title">{group.title}</h4>
+                  <ul>
+                    {group.links.map((item) => (
+                      <li key={item.label}>
+                        {item.href.startsWith("/") ? (
+                          <Link href={item.href}>{item.label}</Link>
+                        ) : (
+                          <a href={item.href}>{item.label}</a>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

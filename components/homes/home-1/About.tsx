@@ -11,13 +11,14 @@ export default function About() {
     <section className="about-us-sec">
       <div className="container">
         <div className="row">
-          <div className="col-lg-5">
+          <div className="col-lg-5" style={{ minHeight: "500px" }}>
             <div className="about-img">
               <Image
                 alt={image.alt}
                 src={image.src}
                 width={image.width}
                 height={image.height}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </div>
           </div>
