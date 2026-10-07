@@ -22,3 +22,50 @@ export const aboutIntroContent = {
     "XXLando, your trusted partner in the future of intelligent technology. Stay ahead in today's data-driven world. Unlock the full potential of AI with Aiero, your trusted partner in the future of intelligent technology — stay ahead in today's.",
   ],
 };
+
+export const aboutTeamContent = {
+  eyebrow: "team",
+  title: "The Neural Network experts: uniting talent for intelligent solutions",
+  counter: {
+    number: "+500",
+    label: "Awesome team members",
+  },
+  cta: { label: "Explore more", href: "#" },
+  members: [
+    {
+      name: "Alan Begham",
+      role: "CEO Aiero",
+      image: "/assets/images/about/3d-woman-shape-glowing.jpg",
+      tag: "Neural",
+      vClass: "",
+    },
+    {
+      name: "Arthur Dowson",
+      role: "AI Programmer",
+      image: "/assets/images/about/about-us-hero.jpg",
+      tag: "Solution",
+      vClass: "v1",
+    },
+    {
+      name: "Dan Smith",
+      role: "ML Engineer",
+      image: "/assets/images/about/testimonials-bg.jpg",
+      tag: "Future",
+      vClass: "v1",
+    },
+    {
+      name: "Brandon Adams",
+      role: "Data Scientist",
+      image: "/assets/images/about/3d-woman-shape-glowing.jpg",
+      tag: "Digital",
+      vClass: "",
+    },
+    {
+      name: "Alan Begham",
+      role: "AI Researcher",
+      image: "/assets/images/about/about-us-hero.jpg",
+      tag: "Learning",
+      vClass: "v1",
+    },
+  ],
+};
